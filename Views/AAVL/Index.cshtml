@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Labo3_JonnathanLanuza1082219__CésarSilva1184519.Models.Medicine>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Open New List from File...</a>
+</p>
+<p>
+    <a asp-action="CreateClient">Add information</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Existence)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Existence)
+                </td>
+            </tr>
+        }
+
+    </tbody>
+    <form method="post">
+        Search ONLY medicine name  </br>
+        <input type="text" name="Name" value="@ViewData["SearchName"]" /> </br>
+        <input type="submit" asp-action="Search" />
+    </form></br>
+    <a asp-action="Index"> Return to list </a>
+    </br>
+    </br>
+    <form method="post">
+        RESUPPLY medicine?</br>
+        <input type="submit" value="@ViewData["Resupply"]" asp-action="Resupply" />
+    </form>
+</table>
