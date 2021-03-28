@@ -60,7 +60,8 @@ namespace Labo3_JonnathanLanuza1082219__CésarSilva1184519.Controllers
                     {
                         Singleton.Instance.MClientsList.Add(Singleton.Instance.MClientsList[i]);
                         Medicine mednew = new Medicine();
-                        //BinaryTree.Insert(Convert.ToInt32(mednew.Id));++++++++++++++++++++++++++++
+                        int y = (Convert.ToInt32(mednew.Id));
+                        AVLTree.Add(y);
                         int? search = Convert.ToInt32(Mclients.Find(x => x.Existence == 0));
                         if (search == 0)
                         {
