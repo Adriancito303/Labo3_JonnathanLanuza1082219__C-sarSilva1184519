@@ -14,5 +14,6 @@ namespace Labo3_JonnathanLanuza1082219__CésarSilva1184519.Models
         public string Product { get; set; }
         public int Price { get; set; }
         public int? Existence { get; set; }
+        public string dock { get; set; }
     }
 }

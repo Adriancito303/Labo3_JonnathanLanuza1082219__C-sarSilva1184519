@@ -50,7 +50,7 @@ namespace Labo3_JonnathanLanuza1082219__CésarSilva1184519
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=AAVL}/{action=Index}/{id?}");
             });
         }
     }
