@@ -193,6 +193,11 @@ namespace Labo3_JonnathanLanuza1082219__CésarSilva1184519.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult CreateClient(IFormCollection collection)
+        {
+            return View("Index");
+        }
 
         public ActionResult Create()
         {
@@ -225,7 +230,7 @@ namespace Labo3_JonnathanLanuza1082219__CésarSilva1184519.Controllers
                         Product = collection["Product"],
                         Price = Convert.ToInt32(collection["Price"]),
                         Existence = Convert.ToInt32(collection["Existence"]),
-                        dock = uniquefilename
+                        //dock = uniquefilename
                     };
                     return RedirectToAction("Index", new { id = Medicinew.Id});
                 }
