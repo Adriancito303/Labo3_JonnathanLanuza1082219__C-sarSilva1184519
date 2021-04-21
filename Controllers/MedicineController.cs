@@ -120,7 +120,7 @@ namespace Labo3_JonnathanLanuza1082219__CésarSilva1184519.Controllers
 
 
                             //insertar en el indice de busqueda AVL
-
+                            AVLTree.Add(Singleton.Instance.MClientsList);
                         }
 
                     };
