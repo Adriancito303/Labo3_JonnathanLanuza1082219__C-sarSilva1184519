@@ -27,6 +27,42 @@ namespace Labo3_JonnathanLanuza1082219__CésarSilva1184519.Controllers
             return View(Singleton.Instance.MClientsList);
         }
 
+        public ActionResult Search()
+        {
+            return View(Singleton.Instance.MClientsList);
+        }
+        [HttpPost]
+        public ActionResult Search(string Name, int Id)
+        {
+            ViewData["SearchName"] = Name;
+            ViewData["SearchId"] = Id;
+            Singleton.Instance.MClientsList.Clear();
+
+            if (Name != null)
+            {
+                for (int i = 0; i < Singleton.Instance.MClientsList.Count() - 1; i++)
+                {
+                    if (Singleton.Instance.MClientsList[i].Name == Name)
+                    {
+                        Singleton.Instance.MClientsList.Add(Singleton.Instance.MClientsList[i]);
+                    }
+                }
+                return View(Singleton.Instance.MClientsList);
+            }
+            if (Id >= 0)
+            {
+                for (int i = 0; i < Singleton.Instance.MClientsList.Count() - 1; i++)
+                {
+                    if (Singleton.Instance.MClientsList[i].Id == Id)
+                    {
+                        Singleton.Instance.MClientsList.Add(Singleton.Instance.MClientsList[i]);
+                    }
+                }
+                return View(Singleton.Instance.MClientsList);
+            }
+            return View();
+        }
+
         // GET: MedicineController/Details/5
         public ActionResult Details(int id)
         {
@@ -57,13 +93,29 @@ namespace Labo3_JonnathanLanuza1082219__CésarSilva1184519.Controllers
                         string filepath = Path.Combine(uploadsfolder, uniquefilename);
                         model.SelectList.CopyTo(new FileStream(filepath, FileMode.Create));
                         //Leer archivo
-                        StreamReader lector = new StreamReader(filepath);
+                        StreamReader lector = new StreamReader("filepath");
+                        string read = lector.ReadLine();
+                        int cont = 0;
                         while (!lector.EndOfStream)
                         {
                             string leer = lector.ReadLine();
                             //interpretar linea para leer info de medicina
+                            for (int i = 0; i < 6; i++)
+                            {
+                                if (read[i] == ',')
+                                {
+                                    //if (read[i + 1] != ',')
+                                    //{
+                                    //    Singleton.Instance.MClientsList[cont] = read;
+                                    //}
+                                    //else
+                                    //{
+                                    //Singleton.Instance.MClientsList[cont] = Convert.ChangeType(read, Medicine);
+                                    //}
+                                    cont++;
+                                }
+                            }
 
-                            
                             //insertar en la lista de medicinas
 
 

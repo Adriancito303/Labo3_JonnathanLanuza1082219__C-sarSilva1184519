@@ -1,24 +1,11 @@
 ﻿@model IEnumerable<Labo3_JonnathanLanuza1082219__CésarSilva1184519.Models.Medicine>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Search";
 }
 
-<h1>Index</h1>
+<h1>Search</h1>
 
-<p>
-    <a asp-action="CreateClient">Add information</a>
-</p>
-<p>
-    <a asp-action="FileUpload">Upload file</a>
-</p>
-<form method="post">
-    USE ONLY ONE VALUE PER SEARCH </br>
-    Search by Name: <input type="text" name="Name" value="@ViewData["SearchName"]" /> </br>
-    Search by Id: <input type="text" name="Id" value="@ViewData["SearchId"]" /> </br>
-    <input type="submit" asp-action="Search" />
-</form>
-</br>
 <table class="table">
     <thead>
         <tr>
@@ -65,12 +52,10 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Existence)
                 </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                </td>
             </tr>
         }
+        <p>
+            <a asp-action="Index"> Return to list </a>
+        </p>
     </tbody>
 </table>
