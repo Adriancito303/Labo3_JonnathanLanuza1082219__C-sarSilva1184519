@@ -129,6 +129,10 @@ namespace Labo3_JonnathanLanuza1082219__CésarSilva1184519.Controllers
                 return View();
             }
         }
+        public ActionResult see()
+        {
+            return View();
+        }
         public ActionResult Invoice()
         {
             return View();
