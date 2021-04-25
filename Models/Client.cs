@@ -9,7 +9,8 @@ namespace Labo3_JonnathanLanuza1082219__CésarSilva1184519.Models
     {
         public string Name { get; set; }
         public string Direction { get; set; }
-        public string Product { get; set; }
-        public int? Number { get; set; }
+        public int NIT { get; set; }
+        public string product { get; set; }
+        public int amount { get; set; }
     }
 }

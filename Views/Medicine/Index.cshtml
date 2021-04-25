@@ -7,15 +7,17 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="CreateClient">Add information</a>
+    <a asp-action="Invoice">Create Invoice</a>
 </p>
 <p>
     <a asp-action="FileUpload">Upload file</a>
-</p>
+</p></br>
 <form method="post">
-    USE ONLY ONE VALUE PER SEARCH </br>
-    Search by Name: <input type="text" name="Name" value="@ViewData["SearchName"]" /> </br>
-    Search by Id: <input type="text" name="Id" value="@ViewData["SearchId"]" /> </br>
+    <p style="color:#ff0000">USE ONLY ONE VALUE PER SEARCH </p>
+    <p style="color:#0026ff">If "Id" is null, automatically the value to search is "0"</p>
+    <p style="color:#b200ff">If "Id" is null & "Name" is null, redirection to Index View</p>
+    Search by Name: <input type="text" name="Name" value="@ViewData["SearchName"]" /></br>
+    Search by Id: <input type="text" name="Id" value="@ViewData["SearchId"]" /></br>
     <input type="submit" asp-action="Search" />
 </form>
 </br>
