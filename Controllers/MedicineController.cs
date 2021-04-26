@@ -104,11 +104,15 @@ namespace Labo3_JonnathanLanuza1082219__CésarSilva1184519.Controllers
                                 { 
                                     if (read[i + 1] != ',')
                                     {
+
                                         //Singleton.Instance.MClientsList[cont] = Convert.ChangeType(read, Medicine);
+
                                     }
                                     else
                                     {
+
                                         //Singleton.Instance.MClientsList[cont] = Convert.ChangeType(read, Medicine);
+
                                     }
                                     cont++;
                                 }
