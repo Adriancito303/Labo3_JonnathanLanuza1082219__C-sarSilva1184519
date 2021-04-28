@@ -106,13 +106,13 @@ namespace Labo3_JonnathanLanuza1082219__CésarSilva1184519.Controllers
                                     {
 
                                         //Singleton.Instance.MClientsList[cont] = Convert.ChangeType(read, Medicine);
-
+                                        LECTURE.lmed(leer);
                                     }
                                     else
                                     {
 
                                         //Singleton.Instance.MClientsList[cont] = Convert.ChangeType(read, Medicine);
-
+                                        LECTURE.lmed(leer);
                                     }
                                     cont++;
                                 }
